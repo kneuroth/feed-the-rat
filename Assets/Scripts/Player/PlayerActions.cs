@@ -14,6 +14,11 @@ public class PlayerActions
 
     public void Move(Transform transform)
     {
-        player.Components.RigidBody.velocity = new Vector2(player.Stats.Direction.x * player.Stats.Speed * Time.deltaTime, y: player.Stats.Direction.y);
+        player.Components.RigidBody.velocity = new Vector2(player.Stats.Direction.x * player.Stats.Speed * Time.deltaTime, player.Stats.Direction.y * player.Stats.Speed * Time.deltaTime);
+    }
+
+    public void ThrowSnack()
+    {
+        Debug.Log("Throw snac");
     }
 }

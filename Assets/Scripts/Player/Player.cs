@@ -16,12 +16,12 @@ public class Player : MonoBehaviour
 
     public PlayerComponents Components { get => components; }
     public PlayerStats Stats { get => stats; }
+    public PlayerActions Actions { get => actions; }
 
     private void Awake()
     {
         actions = new PlayerActions(this);
         utilities = new PlayerUtilities(this);
-
         stats.Speed = stats.WalkSpeed;
     }
 

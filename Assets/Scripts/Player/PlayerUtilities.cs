@@ -13,7 +13,10 @@ public class PlayerUtilities
 
     public void HandleInput()
     {
-        player.Stats.Direction = new Vector2(Input.GetAxisRaw("Horizontal"), y: player.Components.RigidBody.velocity.y);
-        
+        player.Stats.Direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (Input.GetKeyDown("space"))
+        {
+            player.Actions.ThrowSnack();
+        }
     }
 }
