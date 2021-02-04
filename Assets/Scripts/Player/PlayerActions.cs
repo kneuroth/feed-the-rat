@@ -15,7 +15,7 @@ public class PlayerActions : MonoBehaviour
 
     public void Move(Transform transform)
     {
-        player.Components.RigidBody.velocity = new Vector2(player.Stats.Direction.x * player.Stats.Speed * Time.deltaTime, player.Stats.Direction.y * player.Stats.Speed * Time.deltaTime);
+        player.RigidBody.velocity = new Vector2(player.Stats.Direction.x * player.Stats.Speed * Time.deltaTime, player.Stats.Direction.y * player.Stats.Speed * Time.deltaTime);
     }
 
     public void ThrowSnack()

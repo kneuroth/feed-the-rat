@@ -5,31 +5,34 @@ using UnityEngine;
 public class Snack : MonoBehaviour
 {
 
+    /* Snack references */
     private Transform ratTransform;
+    public Transform RatTransform { get => ratTransform; }
+
     private GameObject rat;
 
+    /* Snack components*/
     [SerializeField]
     private Rigidbody2D rigidBody;
-
+    public Rigidbody2D RigidBody { get => rigidBody; }
 
     [SerializeField]
     private BoxCollider2D snackCollider;
 
+    private Vector2 screenBounds;
+
+    /* Snack Scripts */
     [SerializeField]
     private SnackStats stats;
-
-    [SerializeField]
-    private SnackComponents components;
+    public SnackStats Stats { get => stats; }
 
     private SnackActions actions;
-
-    public Rigidbody2D RigidBody { get => rigidBody; }
-    public SnackComponents Components { get => components; }
-    public SnackStats Stats { get => stats; }
     public SnackActions Actions { get => actions; }
-    public Transform RatTransform { get => ratTransform; }
 
-    private Vector2 screenBounds;
+
+
+
+    
 
 
     // Start is called before the first frame update
@@ -69,8 +72,6 @@ public class Snack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
         actions.Move(transform, ratTransform);
-        
     }
 }

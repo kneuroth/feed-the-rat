@@ -4,24 +4,35 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerStats stats;
 
-    [SerializeField]
-    private PlayerComponents components;
-
+    /* Player references */
     [SerializeField]
     public GameObject snackPrefab;
+    public GameObject SnackPrefab { get => snackPrefab; }
 
-    private PlayerReferences references;
-    private PlayerUtilities utilities;
+    /* Player components */
+    [SerializeField]
+    private Rigidbody2D rigidBody;
+    public Rigidbody2D RigidBody { get => rigidBody; }
+
+    /* Player scripts */
+    [SerializeField]
+    private PlayerStats stats;
+    public PlayerStats Stats { get => stats; }
 
     private PlayerActions actions;
-
-    public PlayerComponents Components { get => components; }
-    public PlayerStats Stats { get => stats; }
     public PlayerActions Actions { get => actions; }
-    public GameObject SnackPrefab { get => snackPrefab; }
+
+    private PlayerUtilities utilities;
+
+
+
+
+
+    
+    
+    
+    
 
    
 

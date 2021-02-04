@@ -14,9 +14,7 @@ public class SnackActions
 
     public void Move(Transform transform, Transform ratTransform)
     {
-
-
-
+        
         snack.Stats.Direction = (ratTransform.position - transform.position).normalized;
         Debug.DrawRay(transform.position, snack.Stats.Direction, Color.green);
 
