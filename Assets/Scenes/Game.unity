@@ -555,13 +555,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb936f5582d2504f9a8e1aeec77ebd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snackPrefab: {fileID: 3961630684087389502, guid: 3f921825b35b1ee4d888dcc3d4bdd6ec,
+    type: 3}
+  rigidBody: {fileID: 1429074560}
   stats:
     walkSpeed: 500
     runSpeed: 0
-  components:
-    rigidBody: {fileID: 1429074560}
-  snackPrefab: {fileID: 3961630684087389502, guid: 3f921825b35b1ee4d888dcc3d4bdd6ec,
-    type: 3}
 --- !u!4 &1429074559
 Transform:
   m_ObjectHideFlags: 0

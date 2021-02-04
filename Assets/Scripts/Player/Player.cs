@@ -24,16 +24,6 @@ public class Player : MonoBehaviour
     public PlayerActions Actions { get => actions; }
 
     private PlayerUtilities utilities;
-
-
-
-
-
-    
-    
-    
-    
-
    
 
     private void Awake()
