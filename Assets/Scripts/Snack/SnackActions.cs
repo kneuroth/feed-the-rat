@@ -20,6 +20,6 @@ public class SnackActions
         snack.Stats.Direction = (ratTransform.position - transform.position).normalized;
         Debug.DrawRay(transform.position, snack.Stats.Direction, Color.green);
 
-        snack.Components.RigidBody.velocity = new Vector2(snack.Stats.Direction.x * snack.Stats.Speed * Time.deltaTime, snack.Stats.Direction.y * snack.Stats.Speed * Time.deltaTime);
+        snack.RigidBody.velocity = new Vector2(snack.Stats.Direction.x * snack.Stats.Speed * Time.deltaTime, snack.Stats.Direction.y * snack.Stats.Speed * Time.deltaTime);
     }
 }

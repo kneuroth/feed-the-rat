@@ -5,8 +5,15 @@ using UnityEngine;
 public class Snack : MonoBehaviour
 {
 
-    [SerializeField]
     private Transform ratTransform;
+    private GameObject rat;
+
+    [SerializeField]
+    private Rigidbody2D rigidBody;
+
+
+    [SerializeField]
+    private BoxCollider2D snackCollider;
 
     [SerializeField]
     private SnackStats stats;
@@ -16,6 +23,7 @@ public class Snack : MonoBehaviour
 
     private SnackActions actions;
 
+    public Rigidbody2D RigidBody { get => rigidBody; }
     public SnackComponents Components { get => components; }
     public SnackStats Stats { get => stats; }
     public SnackActions Actions { get => actions; }
@@ -35,26 +43,34 @@ public class Snack : MonoBehaviour
     private void Awake()
     {
 
+ 
+        rat = GameObject.Find("Rat");
+        ratTransform = rat.transform;
 
-
-
-
-        ratTransform = GameObject.Find("Rat").transform;
         actions = new SnackActions(this);
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        //stats.Direction = new Vector2(0,-1);
     }
 
     // Update is called once per frame
     private void Update()
     {
+
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if( collision.gameObject == rat)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+
 
     private void FixedUpdate()
     {
         
         actions.Move(transform, ratTransform);
-
         
     }
 }

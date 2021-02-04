@@ -46,11 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3e5aa7d4e11d745a5a08929c1f93b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratTransform: {fileID: 0}
+  rigidBody: {fileID: 3961630684087389500}
+  snackCollider: {fileID: 3961630684087389506}
   stats:
     speed: 200
-  components:
-    rigidBody: {fileID: 3961630684087389500}
 --- !u!50 &3961630684087389500
 Rigidbody2D:
   serializedVersion: 4
@@ -82,7 +81,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.015869379}
