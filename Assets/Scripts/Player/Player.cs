@@ -10,13 +10,20 @@ public class Player : MonoBehaviour
     [SerializeField]
     private PlayerComponents components;
 
+    [SerializeField]
+    public GameObject snackPrefab;
+
     private PlayerReferences references;
     private PlayerUtilities utilities;
+
     private PlayerActions actions;
 
     public PlayerComponents Components { get => components; }
     public PlayerStats Stats { get => stats; }
     public PlayerActions Actions { get => actions; }
+    public GameObject SnackPrefab { get => snackPrefab; }
+
+   
 
     private void Awake()
     {

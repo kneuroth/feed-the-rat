@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerActions
+public class PlayerActions : MonoBehaviour
 {
+    
 
     private Player player;
 
@@ -19,6 +20,7 @@ public class PlayerActions
 
     public void ThrowSnack()
     {
-        Debug.Log("Throw snac");
+        GameObject sn = GameObject.Instantiate(player.SnackPrefab) as GameObject;
+        sn.transform.position = player.transform.position;
     }
 }

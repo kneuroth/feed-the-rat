@@ -21,6 +21,8 @@ public class Snack : MonoBehaviour
     public SnackActions Actions { get => actions; }
     public Transform RatTransform { get => ratTransform; }
 
+    private Vector2 screenBounds;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -32,14 +34,14 @@ public class Snack : MonoBehaviour
 
     private void Awake()
     {
-        
 
 
 
-        
 
+
+        ratTransform = GameObject.Find("Rat").transform;
         actions = new SnackActions(this);
-        
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         //stats.Direction = new Vector2(0,-1);
     }
 
@@ -50,8 +52,9 @@ public class Snack : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         
         actions.Move(transform, ratTransform);
+
+        
     }
 }
